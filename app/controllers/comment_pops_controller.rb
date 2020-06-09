@@ -1,0 +1,2 @@
+class CommentPopsController < ApplicationController
+end

@@ -1,0 +1,2 @@
+module ArticlePopsHelper
+end

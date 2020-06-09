@@ -1,0 +1,2 @@
+class ArticlePopsController < ApplicationController
+end
