@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        article = Article.create!(user_id: params["article"]["user_id"], title: params["article"]["title"], url: params["article"]["url"], desc: params["article"]["desc"])
+        article = Article.create!(user_id: params["article"]["user_id"], title: params["article"]["title"], url: params["article"]["url"], description: params["article"]["desc"])
 
         if article
             render json: {
@@ -15,6 +15,11 @@ class ArticlesController < ApplicationController
         else
             render json: { status: 500 }  
         end
+    end
+    
+    def show
+        @article = Article.find(params["id"])
+        render json: @article.to_json(article_serializer)
     end
 
     private
