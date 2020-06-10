@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2020_06_04_021226) do
 
   create_table "articles", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "article_pop_id"
     t.string "title"
     t.string "url"
     t.string "description"
@@ -43,7 +42,6 @@ ActiveRecord::Schema.define(version: 2020_06_04_021226) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "comment_pop_id"
     t.integer "article_id"
     t.string "content"
     t.datetime "created_at", precision: 6, null: false

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # resources :comment_pops
   # resources :article_pops
   # resources :specialities
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show]
   resources :sessions, only: [:create]
   resources :registrations, only: [:create]
   resources :articles

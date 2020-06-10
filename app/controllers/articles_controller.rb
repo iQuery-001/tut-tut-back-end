@@ -25,8 +25,8 @@ class ArticlesController < ApplicationController
     private
     def article_serializer
             {
-                :only => [:title, :url, :description, :created_at, :id],
-                :include => [:article_pops => {
+                :only => [:user_id, :title, :url, :description, :created_at, :id],
+                :include => [:comments, :article_pops => {
                     :include => [:user]
                 }]
             }
