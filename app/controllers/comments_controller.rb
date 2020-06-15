@@ -17,6 +17,17 @@ class CommentsController < ApplicationController
         end
     end
 
+    def destroy
+        # comment = Comment.find(params["id"])
+        puts params
+        Comment.delete(params["id"])
+    end
+
+    def show
+        comment = Comment.find(params["id"])
+        render json: comment.to_json(comment_serializer)
+    end
+
     def update
         comment = Comment.find(params["id"])
         # binding.pry
@@ -37,7 +48,7 @@ class CommentsController < ApplicationController
 
     def comment_serializer
         {
-            :only => [:id, :user_id, :created_at, :content],
+            :only => [:id, :user_id, :article_id, :created_at, :content],
                 :include => [:comment_pops => {
                     :include => [:user]
                 }]
