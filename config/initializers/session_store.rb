@@ -1,1 +1,1 @@
-Rails.application.config.session_store :cookie_store, key: "_tut-tut", domain: "http://localhost:3000"
+Rails.application.config.session_store :cookie_store, key: "_tut-tut", domain: "https://tut-tut-api.netlify.app"
