@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
             render json: {
                 status: :created,
                 logged_in: true,
-                user: user
+                user: user.email
             }
             puts "====="
             puts session[:user_id]
@@ -30,8 +30,8 @@ class SessionsController < ApplicationController
     end
 
     def logged_in
-        puts "============"
         set_current_user();
+        puts "============"
         puts @current_user
         puts session[:user_id]
         puts "============"
